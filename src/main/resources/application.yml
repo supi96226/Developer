@@ -1,0 +1,17 @@
+server:
+  port: 8088
+
+spring:
+  datasource:
+    username: root
+    password: root1234
+    url: jdbc:mysql://developeriqdb.cxx7txujhwmr.us-east-2.rds.amazonaws.com:3306/DEVELOPER_DB
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
