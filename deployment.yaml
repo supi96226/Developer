@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: developer-app
     spec:
       containers:
-      - image: Supipi/DeveloperAPI:main
+      - image: Supipi/Developer:main
         imagePullPolicy: Always
         name: developer-app
         ports:
