@@ -1,2 +1,2 @@
-# VoterAPI
-Voter management API
+# DeveloperAPI
+Developer management API
