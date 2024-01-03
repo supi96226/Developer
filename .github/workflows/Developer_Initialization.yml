@@ -17,7 +17,7 @@ permissions:
   contents: read
 
 env:
-  ECR_REPOSITORY: developerprivate
+  ECR_REPOSITORY: developer
   EKS_CLUSTER_NAME: acmecorp-developer
   AWS_REGION: us-east-2
 
@@ -56,20 +56,37 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          
 
-      - name: Update kube config
+#      - name: Update kube config
 #        run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
-        run: echo "EKS Cluster Name"
-
-      - name: Deploy to EKS
+#
+#      - name: Deploy to EKS
 #        env:
 #          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
 #          IMAGE_TAG: ${{ steps.commit.outputs.short }}
 #        run: |
 #          sed -i.bak "s|DOCKER_IMAGE|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" manifests/deployment.yaml && \
-#          kubectl apply -f manifests/deployment.yaml
-        run: echo "EKS Cluster Name"
+#          kubectl apply -f manifests/deployment.yaml -n acmecorp-developer-service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #    steps:
